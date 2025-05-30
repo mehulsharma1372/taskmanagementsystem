@@ -4,20 +4,28 @@ from task import Task
 from task_manager import TaskManager
 
 
-class UserInteraction():
-
-    # def __init__(self, title_id, title, description, status, created_at, updated_at):
-    #     super().__init__(title_id, title, description, status, created_at, updated_at)
-    #     self.input_data = {}
+class UserInteraction(Task):
 
     def __init__(self):
-        self.input_data = {}
+        pass
 
     def take_input(self, num):
+        input_data = {}
         self.input_data["title_id"] = num
-        self.input_data["title"]  = input(print("Name of the task:"))
+        self.input_data["title"] = input(print("Name of the task:"))
         self.input_data["description"] = input(print("Description of the task:"))
-        self.input_data["satus"]  = input(print("Status(Complete/Pending):"))
+        self.input_data["satus"] = input(print("Status(Complete/Pending):"))
+        return input_data
+    
+    def times(self):
+        return input(print("How many datum you want to add or modify."))
+        
+
+    def ask(self):
+
+        return input(print("Press A to add, U to update and V to view. To end, press E"))
+
+        
 
 
 c = UserInteraction()
