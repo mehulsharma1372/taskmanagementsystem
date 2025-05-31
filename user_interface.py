@@ -1,20 +1,21 @@
 """This module contains the user interaction."""
 
-from task import Task
-from task_manager import TaskManager
+# from task import Task
+# from task_manager import TaskManager
 
 
-class UserInteraction(Task):
+class UserInteraction():
 
     def __init__(self):
         pass
 
-    def take_input(self, num):
+    def take_input(self):
         input_data = {}
-        self.input_data["title_id"] = num
-        self.input_data["title"] = input(print("Name of the task:"))
-        self.input_data["description"] = input(print("Description of the task:"))
-        self.input_data["satus"] = input(print("Status(Complete/Pending):"))
+        # input_data["title_id"] = num
+        input_data["title"] = input(print("Name of the task:"))
+        input_data["description"] = input(print("Description of the task:"))
+        input_data["status"] = input(print("Status(Complete/Pending):"))
+        print(input_data)
         return input_data
     
     def times(self):
@@ -28,7 +29,4 @@ class UserInteraction(Task):
         
 
 
-c = UserInteraction()
 
-c.take_input("1")
-print(c.input_data)

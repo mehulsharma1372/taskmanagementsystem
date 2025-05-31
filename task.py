@@ -19,7 +19,3 @@ class Task:
 
         print ("Here are the task details:""\n" , self.title, "\n" , self.description, "\n" , self.status, "\n", self.created_at, "\n")
         
-
-# c = Task(34,56,3434,76,45,87)
-
-# c.task_info()
