@@ -2,7 +2,7 @@
 
 # from task import Task
 # from task_manager import TaskManager
-
+from datetime import datetime
 
 class UserInteraction():
 
@@ -15,6 +15,7 @@ class UserInteraction():
         input_data["title"] = input(print("Name of the task:"))
         input_data["description"] = input(print("Description of the task:"))
         input_data["status"] = input(print("Status(Complete/Pending):"))
+        input_data["added_at"] = str(datetime.now())
         print(input_data)
         return input_data
     
@@ -24,7 +25,7 @@ class UserInteraction():
 
     def ask(self):
 
-        return input(print("Press A to add, U to update and V to view. To end, press E"))
+        return input(print("Press A to add, U to update and V to view, D to delete. To end, press E"))
 
         
 
