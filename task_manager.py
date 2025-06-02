@@ -3,7 +3,7 @@
 # from task import Task
 from user_interface import UserInteraction
 import json
-import datetime
+from datetime import datetime
 
 
 
@@ -19,12 +19,13 @@ class TaskManager(UserInteraction):
 
     def update_task(self, name):
         key = input(print("What do you want to update in", name))
-        if key in self.all_taks.keys:
+        if key in self.all_taks.keys():
             new_response = input(print("What is the new value."))
             self.all_taks[name][key] = new_response
+            self.all_taks[name]["updated_at"] = str(datetime.now())
 
         else:
-            print("No such entri in data")
+            print("No such entry in data")
 
     def interact(self):
 
@@ -45,7 +46,6 @@ class TaskManager(UserInteraction):
                         print("Please give the Name of the task you want to view")
                     )
                     print(self.all_taks[name])
-                    # print(self.all_taks[print(input("Please give the Name of the task you want to view."))])
 
                 except KeyError:
                     print("No task with this name.")
@@ -86,7 +86,9 @@ class TaskManager(UserInteraction):
             json.dump(self.all_taks, f)
 
 
-s = TaskManager()
+if __name__ == "__main__":
 
-print(s.interact())
-s.to_json()
+    s = TaskManager()
+
+    print(s.interact())
+    s.to_json()
